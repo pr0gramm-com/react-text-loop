@@ -1,5 +1,5 @@
 {
-  "name": "@pr0gramm/react-text-loop-next",
+  "name": "@pr0gramm/react-text-loop",
   "version": "0.0.3",
   "author": "pr0gramm.com developers <contact@pr0gramm.com>",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samarmohan/react-text-loop-next.git"
+    "url": "git+https://github.com/pr0gramm-com/react-text-loop.git"
   },
   "files": [
     "dist"

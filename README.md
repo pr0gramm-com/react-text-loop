@@ -1,4 +1,4 @@
-## react-text-loop-next
+## `@pr0gramm/react-text-loop`
 
 ![text-loop2](https://cloud.githubusercontent.com/assets/38172/24254063/d5e9c38c-0fd9-11e7-9b75-46dc00421cd7.gif)
 
@@ -17,19 +17,23 @@ Thanks to [@braposo](https://github.com/braposo) and [samarmohan](https://github
 ---
 
 ## Installation
-
-`npm install react-text-loop-next` or `yarn add react-text-loop-next`
+Some commands for you to copy:
+```sh
+npm i @pr0gramm/react-text-loop
+```
+```sh
+yarn add @pr0gramm/react-text-loop
+```
+```sh
+bun add @pr0gramm/react-text-loop
+```
 
 ## How to use
-
-[![Edit react-text-loop-next][codesandbox-badge]][codesandbox]
-
 You can also run the examples by cloning the repo and running `npm start`.
 
 ### Usage
-
 ```jsx
-import { TextLoop } from "react-text-loop-next";
+import { TextLoop } from "@pr0gramm/react-text-loop";
 
 const App = () => {
   return (
@@ -46,7 +50,6 @@ const App = () => {
 ```
 
 ### Props
-
 | Prop           | Type            | Default                           | Definition                                                                                                                                                     |
 | -------------- | --------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | interval       | number \| array | `3000`                            | The frequency (in ms) that the words change. Can also pass an array if you want a different interval per children                                              |
@@ -60,7 +63,6 @@ const App = () => {
 | children       | node            |                                   | The words you want to loop (required)                                                                                                                          |
 
 ### Caveats
-
 Because `<TextLoop>` loops through its children nodes, only root-level nodes will be considered so
 doing something like:
 
