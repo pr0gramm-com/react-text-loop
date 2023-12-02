@@ -176,10 +176,10 @@ class TextLoop extends React.Component<Props, State> {
             this.clearTimeouts();
             this.tickLoop = requestTimeout(
               this.tick,
-              this.state.currentInterval
+              this.state.currentInterval,
             );
           }
-        }
+        },
       );
     }
   };
