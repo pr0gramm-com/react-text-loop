@@ -34,12 +34,10 @@ Please create an issue before starting something big, we do not want to waste yo
 
 Building: We have n [es modules tsconfig](./tsconfig.esm.json) for different build targets. The [base tsconfig](./tsconfig.base.json) is used for generating types.
 
-Quality: ESLint, biome, and Jest, are use to maintain codebase quality.
+Quality: ESLint and biome are use to maintain codebase quality.
 
 Structure: The structure of the codebase is very simple.
 
-- [\_\_tests\_\_](./__tests__/): [Jest](https://facebook.github.io/jest/) tests.
-  - [TextLoop.test.tsx](./__tests__/TextLoop.test.tsx): Tests for the [TextLoop](./src/TextLoop.tsx) component.
 - [src](./src/): The source code
   - [index.ts](./src/index.ts): exports the main [TextLoop](./src/TextLoop.tsx) component.
   - [utils.ts](./src/utils.ts): Random utils that [TextLoop](./src/TextLoop.tsx) uses.
