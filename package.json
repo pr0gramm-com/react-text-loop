@@ -18,8 +18,8 @@
     "lint:fix": "biome check --apply ./",
     "prebuild": "rimraf dist",
     "start:examples": "parcel examples/index.html -d examples/dist --cache-dir examples/cache --open",
-    "prepublishOnly": "yarn run test && npm run format && yarn run lint && yarn run build",
-    "quality": "yarn run test && npm run format && yarn run lint",
+    "prepublishOnly": "npm run test && npm run format && npm run lint && npm run build",
+    "quality": "npm run test && npm run format && npm run lint",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "prepare": "husky install",
@@ -93,6 +93,5 @@
   "dependencies": {
     "cxs": "^6.2.0",
     "react-motion": "^0.5.2"
-  },
-  "packageManager": "yarn@3.2.3"
+  }
 }
