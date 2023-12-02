@@ -2,7 +2,12 @@
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
 		"tsconfig.json": "tsconfig.*.json",
-		"package.json": "package-lock.json, .npmrc",
-		"*.tsx": "$(capture).module.scss"
-	}
+		"package.json": "package-lock.json, .npmrc"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
 }
