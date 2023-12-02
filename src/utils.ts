@@ -1,39 +1,6 @@
-declare global {
-  interface Window {
-    mozRequestAnimationFrame;
-    oRequestAnimationFrame;
-    msRequestAnimationFrame;
-    webkitRequestAnimationFrame: (callback: FrameRequestCallback) => number;
-    mozCancelRequestAnimationFrame;
-    webkitCancelRequestAnimationFrame;
-    oCancelRequestAnimationFrame;
-    msCancelRequestAnimationFrame;
-    webkitCancelAnimationFrame: (handle: number) => void;
-  }
-}
-
 declare interface Handle {
   value: number | void;
 }
-
-const requestAnimFrame = (() => {
-  if (typeof window !== "undefined") {
-    return (
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function cb(/* function */ callback): void {
-        window.setTimeout(callback, 1000 / 60);
-      }
-    );
-  }
-
-  return (): void => {
-    /* return empty function */
-  };
-})();
 
 export type RequestTimeout = Record<string, unknown> | number | void | Handle;
 /**
@@ -41,19 +8,7 @@ export type RequestTimeout = Record<string, unknown> | number | void | Handle;
  * @param {function} fn The callback function
  * @param {int} delay The delay in milliseconds
  */
-export const requestTimeout = function (fn, delay: number): RequestTimeout {
-  if (
-    !window.requestAnimationFrame &&
-    !window.webkitRequestAnimationFrame &&
-    !(
-      window.mozRequestAnimationFrame && window.mozCancelRequestAnimationFrame
-    ) && // Firefox 5 ships without cancel support
-    !window.oRequestAnimationFrame &&
-    !window.msRequestAnimationFrame
-  ) {
-    return window.setTimeout(fn, delay);
-  }
-
+export const requestTimeout = (fn, delay: number): RequestTimeout => {
   const start = new Date().getTime();
 
   const handle: Handle = { value: 0 };
@@ -66,11 +21,11 @@ export const requestTimeout = function (fn, delay: number): RequestTimeout {
     if (delta >= delay) {
       fn.call(null);
     } else {
-      handle.value = requestAnimFrame(loop);
+      handle.value = window.requestAnimationFrame(loop);
     }
   }
 
-  handle.value = requestAnimFrame(loop);
+  handle.value = window.requestAnimationFrame(loop);
   return handle;
 };
 
@@ -78,20 +33,5 @@ export const requestTimeout = function (fn, delay: number): RequestTimeout {
  * Behaves the same as clearTimeout except uses cancelRequestAnimationFrame() where possible for better performance
  * @param {int|object} fn The callback function
  */
-export const clearRequestTimeout = function (handle): void {
-  return window.cancelAnimationFrame
-    ? window.cancelAnimationFrame(handle.value)
-    : window.webkitCancelAnimationFrame
-      ? window.webkitCancelAnimationFrame(handle.value)
-      : window.webkitCancelRequestAnimationFrame
-        ? window.webkitCancelRequestAnimationFrame(
-            handle.value,
-          ) /* Support for legacy API */
-        : window.mozCancelRequestAnimationFrame
-          ? window.mozCancelRequestAnimationFrame(handle.value)
-          : window.oCancelRequestAnimationFrame
-            ? window.oCancelRequestAnimationFrame(handle.value)
-            : window.msCancelRequestAnimationFrame
-              ? window.msCancelRequestAnimationFrame(handle.value)
-              : clearTimeout(handle);
-};
+export const clearRequestTimeout = (handle): void =>
+  window.cancelAnimationFrame(handle.value);
