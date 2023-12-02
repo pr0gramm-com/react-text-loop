@@ -15,7 +15,8 @@ export const requestTimeout = (fn, delay: number): RequestTimeout => {
     const delta = current - start;
 
     if (delta >= delay) {
-      return fn.call(null);
+      fn.call(null);
+      return;
     }
     handle.value = window.requestAnimationFrame(loop);
   }

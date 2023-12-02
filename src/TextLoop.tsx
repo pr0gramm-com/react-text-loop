@@ -22,7 +22,12 @@ type Props = {
   mask: boolean;
   noWrap: boolean;
   className?: string;
-  onChange?: Function;
+  onChange?: (state: {
+    currentWordIndex: number;
+    currentEl: ReactNode;
+    wordCount: number;
+    currentInterval: number;
+  }) => void;
 };
 
 type State = {
