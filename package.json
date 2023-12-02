@@ -17,8 +17,7 @@
     "lint": "biome check ./src",
     "lint:fix": "biome check --apply ./src",
     "prebuild": "rimraf dist",
-    "start:examples": "parcel examples/index.html -d examples/dist --cache-dir examples/cache --open",
-    "prepublishOnly": "npm run test && npm run format && npm run lint && npm run build",
+    "prepublishOnly": "npm test && npm run format && npm run lint && npm run build",
     "test": "tsc --noEmit"
   },
   "config": {

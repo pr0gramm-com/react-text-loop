@@ -36,9 +36,9 @@ type State = {
 class TextLoop extends React.Component<Props, State> {
   isUnMounting = false;
 
-  tickDelay: RequestTimeout = 0;
+  tickDelay: RequestTimeout | null = null;
 
-  tickLoop: RequestTimeout = 0;
+  tickLoop: RequestTimeout | null = null;
 
   wordBox: HTMLDivElement | null = null;
 

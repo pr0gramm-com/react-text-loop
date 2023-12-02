@@ -12,13 +12,14 @@ function equal(a, b) {
   // START: fast-deep-equal es6/index.js 3.1.1
   if (a === b) return true;
 
-  if (a && b && typeof a == "object" && typeof b == "object") {
+  if (a && b && typeof a === "object" && typeof b === "object") {
     if (a.constructor !== b.constructor) return false;
 
-    let length, i;
+    let length;
+    let i;
     if (Array.isArray(a)) {
       length = a.length;
-      if (length != b.length) return false;
+      if (length !== b.length) return false;
       for (i = length; i-- !== 0; ) if (!equal(a[i], b[i])) return false;
       return true;
     }
@@ -44,7 +45,7 @@ function equal(a, b) {
 
     if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
       length = a.byteLength;
-      if (length != b.byteLength) return false;
+      if (length !== b.byteLength) return false;
       for (i = length; i-- !== 0; ) if (a[i] !== b[i]) return false;
       return true;
     }

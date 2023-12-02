@@ -1,8 +1,4 @@
-declare interface Handle {
-  value: number | void;
-}
-
-export type RequestTimeout = Record<string, unknown> | number | void | Handle;
+export type RequestTimeout = { value: number };
 /**
  * Behaves the same as setTimeout except uses requestAnimationFrame() where possible for better performance
  * @param {function} fn The callback function
@@ -11,18 +7,17 @@ export type RequestTimeout = Record<string, unknown> | number | void | Handle;
 export const requestTimeout = (fn, delay: number): RequestTimeout => {
   const start = new Date().getTime();
 
-  const handle: Handle = { value: 0 };
+  const handle: RequestTimeout = { value: 0 };
 
-  function loop(): number | void {
+  function loop(): void {
     const current = new Date().getTime();
 
     const delta = current - start;
 
     if (delta >= delay) {
-      fn.call(null);
-    } else {
-      handle.value = window.requestAnimationFrame(loop);
+      return fn.call(null);
     }
+    handle.value = window.requestAnimationFrame(loop);
   }
 
   handle.value = window.requestAnimationFrame(loop);
