@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactFragment, ReactPortal } from "react";
+import React, { ReactNode } from "react";
 import {
   TransitionMotion,
   spring,
@@ -26,8 +26,8 @@ type Props = {
 };
 
 type State = {
-  elements: (ReactChild | ReactFragment | ReactPortal)[];
-  currentEl: ReactChild | ReactFragment | ReactPortal;
+  elements: ReactNode[];
+  currentEl: ReactNode;
   currentWordIndex: number;
   wordCount: number;
   currentInterval: number;
