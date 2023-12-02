@@ -29,13 +29,3 @@ Before submitting an issue, make sure your issue hasn't already been reported by
 ### New Features
 
 Please create an issue before starting something big, we do not want to waste your time implementing a feature we won't merge.
-
-## Codebase reference
-
-Building: We have n [es modules tsconfig](./tsconfig.esm.json) for different build targets. The [base tsconfig](./tsconfig.base.json) is used for generating types.
-
-Structure: The structure of the codebase is very simple:
-- [src](./src/): The source code
-  - [index.ts](./src/index.ts): exports the main [TextLoop](./src/TextLoop.tsx) component.
-  - [utils.ts](./src/utils.ts): Random utils that [TextLoop](./src/TextLoop.tsx) uses.
-  - [TextLoop.tsx](./src/index.ts): This is the one and only component. All the magic happens here.
