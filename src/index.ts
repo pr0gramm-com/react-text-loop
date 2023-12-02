@@ -1,1 +1,1 @@
-export { default as TextLoop } from "./TextLoop";
+export { default as TextLoop, TextLoopProps } from "./TextLoop";

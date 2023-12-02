@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 import {
   TransitionMotion,
   spring,
@@ -9,8 +9,7 @@ import cxs from "cxs";
 import { isEqual } from "./isEqual";
 import { requestTimeout, clearRequestTimeout, RequestTimeout } from "./utils";
 
-type Props = {
-  children?: (string | JSX.Element)[] | undefined;
+export type TextLoopProps = PropsWithChildren & {
   interval: number | number[];
   delay: number;
   adjustingSpeed: number;
@@ -38,7 +37,7 @@ type State = {
   currentInterval: number;
 };
 
-class TextLoop extends React.Component<Props, State> {
+export default class TextLoop extends React.Component<TextLoopProps, State> {
   isUnMounting = false;
 
   tickDelay: RequestTimeout | null = null;
@@ -47,7 +46,7 @@ class TextLoop extends React.Component<Props, State> {
 
   wordBox: HTMLDivElement | null = null;
 
-  static defaultProps: Props = {
+  static defaultProps: TextLoopProps = {
     interval: 3000,
     delay: 0,
     adjustingSpeed: 150,
@@ -57,7 +56,7 @@ class TextLoop extends React.Component<Props, State> {
     noWrap: true,
   };
 
-  constructor(props: Props) {
+  constructor(props: TextLoopProps) {
     super(props);
     const elements = React.Children.toArray(props.children);
 
@@ -84,8 +83,8 @@ class TextLoop extends React.Component<Props, State> {
     }
   }
 
-  componentDidUpdate(prevProps: Props, prevState: State): void {
-    const { interval, children, delay } = this.props as Props;
+  componentDidUpdate(prevProps: TextLoopProps, prevState: State): void {
+    const { interval, children, delay } = this.props as TextLoopProps;
     const { currentWordIndex } = this.state;
 
     const currentInterval = Array.isArray(interval)
@@ -286,5 +285,3 @@ class TextLoop extends React.Component<Props, State> {
     );
   }
 }
-
-export default TextLoop;
