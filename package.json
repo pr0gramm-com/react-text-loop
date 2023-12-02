@@ -2,7 +2,6 @@
   "name": "@pr0gramm/react-text-loop-next",
   "version": "0.0.3",
   "description": "Create an animated loop of a list of text for your headings",
-  "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
@@ -12,7 +11,6 @@
   "scripts": {
     "build": "npm-run-all build:*",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
     "prebuild": "rimraf dist",
     "start:examples": "parcel examples/index.html -d examples/dist --cache-dir examples/cache --open",
