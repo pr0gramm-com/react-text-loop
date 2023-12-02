@@ -1,6 +1,8 @@
 {
   "name": "@pr0gramm/react-text-loop-next",
   "version": "0.0.3",
+  "author": "pr0gramm.com developers <contact@pr0gramm.com>",
+  "license": "MIT",
   "description": "Create an animated loop of a list of text for your headings",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -44,12 +46,6 @@
     "react",
     "motion"
   ],
-  "author": "Samar Mohan <samar.mohan@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/samarmohan/react-text-loop-next/issues"
-  },
-  "homepage": "https://github.com/samarmohan/react-text-loop-next#readme",
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",
     "@testing-library/jest-dom": "^6.1.5",
