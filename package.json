@@ -1,5 +1,5 @@
 {
-  "name": "react-text-loop-next",
+  "name": "@pr0gramm/react-text-loop-next",
   "version": "0.0.3",
   "description": "Create an animated loop of a list of text for your headings",
   "main": "./dist/cjs/index.js",
@@ -89,8 +89,8 @@
     "typescript": "^4.8.2"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "dependencies": {
     "cxs": "^6.2.0",
