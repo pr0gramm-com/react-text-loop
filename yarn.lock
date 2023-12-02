@@ -314,6 +314,23 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@biomejs/biome@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@biomejs/biome/-/biome-1.4.1.tgz"
+  integrity sha512-JccVAwPbhi37pdxbAGmaOBjUTKEwEjWAhl7rKkVVuXHo4MLASXJ5HR8BTgrImi4/7rTBsGz1tgVD1Kwv1CHGRg==
+  optionalDependencies:
+    "@biomejs/cli-darwin-arm64" "1.4.1"
+    "@biomejs/cli-darwin-x64" "1.4.1"
+    "@biomejs/cli-linux-arm64" "1.4.1"
+    "@biomejs/cli-linux-x64" "1.4.1"
+    "@biomejs/cli-win32-arm64" "1.4.1"
+    "@biomejs/cli-win32-x64" "1.4.1"
+
+"@biomejs/cli-linux-x64@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@biomejs/cli-linux-x64/-/cli-linux-x64-1.4.1.tgz"
+  integrity sha512-9YOZw3qBd/KUj63A6Hn2zZgzGb2nbESM0qNmeMXgmqinVKM//uc4OgY5TuKITuGjMSvcVxxd4dX1IzYjV9qvNQ==
+
 "@commitlint/cli@^17.1.2":
   version "17.8.1"
   resolved "https://registry.npmjs.org/@commitlint/cli/-/cli-17.8.1.tgz"

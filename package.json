@@ -55,6 +55,7 @@
   },
   "homepage": "https://github.com/samarmohan/react-text-loop-next#readme",
   "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@testing-library/jest-dom": "^5.16.5",
