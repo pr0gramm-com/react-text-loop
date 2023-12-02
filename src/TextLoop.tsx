@@ -108,7 +108,6 @@ class TextLoop extends React.Component<Props, State> {
     }
 
     if (!isEqual(prevProps.children, children)) {
-      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
         elements: React.Children.toArray(children),
       });

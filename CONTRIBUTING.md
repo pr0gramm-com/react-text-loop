@@ -34,10 +34,7 @@ Please create an issue before starting something big, we do not want to waste yo
 
 Building: We have n [es modules tsconfig](./tsconfig.esm.json) for different build targets. The [base tsconfig](./tsconfig.base.json) is used for generating types.
 
-Quality: ESLint and biome are use to maintain codebase quality.
-
-Structure: The structure of the codebase is very simple.
-
+Structure: The structure of the codebase is very simple:
 - [src](./src/): The source code
   - [index.ts](./src/index.ts): exports the main [TextLoop](./src/TextLoop.tsx) component.
   - [utils.ts](./src/utils.ts): Random utils that [TextLoop](./src/TextLoop.tsx) uses.
