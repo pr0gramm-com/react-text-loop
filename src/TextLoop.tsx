@@ -1,13 +1,17 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { type PropsWithChildren, type ReactNode } from "react";
 import {
   TransitionMotion,
   spring,
-  OpaqueConfig,
-  TransitionStyle,
+  type OpaqueConfig,
+  type TransitionStyle,
 } from "react-motion";
 import cxs from "cxs";
 import { isEqual } from "./isEqual";
-import { requestTimeout, clearRequestTimeout, RequestTimeout } from "./utils";
+import {
+  requestTimeout,
+  clearRequestTimeout,
+  type RequestTimeout,
+} from "./utils";
 
 export type TextLoopProps = PropsWithChildren & {
   interval: number | number[];
