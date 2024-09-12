@@ -1,6 +1,6 @@
 {
   "name": "@pr0gramm/react-text-loop",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "pr0gramm.com developers <contact@pr0gramm.com>",
   "license": "MIT",
   "description": "Create an animated loop of a list of text for your headings",
